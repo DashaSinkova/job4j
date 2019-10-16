@@ -10,9 +10,5 @@ public class DummyBot {
         }
             return rsl;
     }
-    public static void main(String[] args){
-       System.out.println(answer("Привет, Бот."));
-        System.out.println(answer("лалала"));
-    }
 
 }
