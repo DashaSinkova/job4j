@@ -11,6 +11,6 @@ public class CheckPrimeNumberTest {
     }
     @Test
     public void when4(){
-        assertThat(ch.check(4),is(false));
+        assertThat(ch.check(30),is(false));
     }
 }
