@@ -1,17 +1,20 @@
 package ru.job4j.loop;
 
 public class PrimeNumber {
+    int count = 0;
+    int cheat = 0;
+
     public int calc(int finish) {
-        int count = finish - 1;
-        for (int var = 2; var <= finish; var++) {
-            for (int i = 2; i < var; i++) {
-                if (var % i == 0) {
-                    count--;
-                    break;
-                }
+
+        if (finish < 2) return  1;
+        for (int var = 2; var < finish; var++) {
+            if (finish % var == 0) {
+                count--;
+                break;
             }
         }
-        return count;
+        cheat++;
+        calc(finish - 1);
+        return cheat + count;
     }
-
 }
