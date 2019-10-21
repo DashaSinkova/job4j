@@ -17,9 +17,11 @@ public class MasLesson {
                 mas[i][j] = i + j * 4;
 
             }
+        mas[0][1] = 1000 ;
         System.out.println(Arrays.deepToString(mas));
         for (int i = 0; i < 5; i++) {
             System.out.print(Arrays.toString(mas[i])+" ");
         }
+
     }
 }
