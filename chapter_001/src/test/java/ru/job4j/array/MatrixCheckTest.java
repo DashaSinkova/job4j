@@ -20,7 +20,7 @@ public class MatrixCheckTest {
                 {' ', ' ', 'X', ' ', ' '},
         };
 
-        assertThat(mc.isWin(input), is(false));
+        assertThat(mc.isWin(input), is(true));
     }
 
     @Test
