@@ -20,7 +20,7 @@ public class MatrixCheckTest {
                 {' ', ' ', 'X', ' ', ' '},
         };
 
-        assertThat(mc.isWin(input), is(true));
+        assertThat(mc.isWin(input), is(false));
     }
 
     @Test
@@ -38,13 +38,13 @@ public class MatrixCheckTest {
     @Test
     public void whenDataMonoByTrueThenTrue2() {
         char[][] input = {
-                {'X', 'X', 'X', 'X', 'X'},
-                {' ', ' ', ' ', ' ', ' '},
+                {'X', 'X', ' ', 'X', 'X'},
+                {' ', ' ', 'X', ' ', ' '},
                 {' ', ' ', ' ', ' ', ' '},
                 {' ', ' ', ' ', ' ', ' '},
                 {' ', ' ', ' ', ' ', ' '},
         };
 
-        assertThat(mc.isWin(input), is(true));
+        assertThat(mc.isWin(input), is(false));
     }
 }
