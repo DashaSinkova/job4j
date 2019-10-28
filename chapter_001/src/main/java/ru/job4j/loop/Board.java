@@ -12,7 +12,9 @@ public class Board {
             for (int j = 0; j < height; j++) {
                 if ((i + j) % 2 == 0) {
                     System.out.print("X");
-                } else System.out.print(" ");
+                } else {
+                    System.out.print(" ");
+                }
             }
             System.out.println(" ");
         }

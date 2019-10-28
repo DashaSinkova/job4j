@@ -8,8 +8,9 @@ public class Slash {
                     System.out.print("0");
                 } else if ((raw + cell) % (size - 1) == 0) {
                     System.out.print("0");
-                } else
+                } else {
                     System.out.print(" ");
+                }
             }
             System.out.println();
         }

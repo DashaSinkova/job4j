@@ -22,8 +22,8 @@ public class ConverterTest {
         Assert.assertEquals(120, Converter.dollarToRuble(2));
     }
     @Test
-    public void euroToRubles(){
-        Assert.assertEquals(140,Converter.euroToRuble(2));
+    public void euroToRubles() {
+        Assert.assertEquals(140, Converter.euroToRuble(2));
     }
 
 }

@@ -2,7 +2,7 @@ package ru.job4j.array;
 
 public class SortSelected {
     public static int[] sort(int[] data) {
-        for (int i = 0; i < data.length-1; i++) {
+        for (int i = 0; i < data.length - 1; i++) {
             int min = findMin(data, i, data.length - 1);
             int index = indexOf(data, min, i, data.length - 1);
             int t = data[i];
@@ -16,7 +16,9 @@ public class SortSelected {
     public static int findMin(int[] data, int start, int finish) {
         int min = data[start];
         for (int i = start; i <= finish; i++) {
-            if (min > data[i]) min = data[i];
+            if (min > data[i]) {
+                min = data[i];
+            }
         }
         return min;
 

@@ -5,16 +5,16 @@ import static org.hamcrest.core.Is.is;
 
 public class MinDiapasonTest {
     @Test
-    public void whenFirstMin(){
-        assertThat(MinDiapason.findMin(new int[]{0,10,2,31,3,2},2,4),is(2));
+    public void whenFirstMin() {
+        assertThat(MinDiapason.findMin(new int[]{0, 10, 2, 31, 3, 2}, 2, 4), is(2));
     }
     @Test
-    public void whenSecondMin(){
-        assertThat(MinDiapason.findMin(new int[]{10,1,2,31,3,2},0,2),is(1));
+    public void whenSecondMin() {
+        assertThat(MinDiapason.findMin(new int[]{10, 1, 2, 31, 3, 2}, 0, 2), is(1));
     }
     @Test
-    public void whenMinThird(){
+    public void whenMinThird() {
 
-        assertThat(MinDiapason.findMin(new int[]{10,1,-2,31,3,2},2,4),is(-2));
+        assertThat(MinDiapason.findMin(new int[]{10, 1, -2, 31, 3, 2}, 2, 4), is(-2));
     }
 }

@@ -9,11 +9,11 @@ public class CheckTest {
     public void whenDataMonoByTrueThenTrue() {
 
 
-        assertThat(check.mono(new boolean[]{true,true,true}), is(true));
+        assertThat(check.mono(new boolean[]{true, true, true}), is(true));
     }
 
     @Test
     public void whenDataNotMonoByTrueThenFalse() {
-        assertThat(check.mono(new boolean[]{true,false,true}), is(false));
+        assertThat(check.mono(new boolean[]{true, false, true}), is(false));
     }
 }

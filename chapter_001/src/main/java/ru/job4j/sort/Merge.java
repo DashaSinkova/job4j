@@ -6,12 +6,15 @@ public class Merge {
     public int[] merge(int[] left, int[] right) {
         int[] mas = new int[left.length + right.length];
         int i = 0, j = 0, k = 0;
-        while (i < left.length & j < right.length)
+        while (i < left.length & j < right.length) {
             mas[k++] = left[i] < right[j] ? left[i++] : right[j++];
-        while (i < left.length)
+        }
+        while (i < left.length) {
             mas[k++] = left[i++];
-        while (j < right.length)
+        }
+        while (j < right.length) {
             mas[k++] = right[j++];
+        }
         return mas;
     }
     public static void main(String[] args) {

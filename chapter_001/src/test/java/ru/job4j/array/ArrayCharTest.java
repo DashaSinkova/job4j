@@ -14,7 +14,7 @@ public class ArrayCharTest {
     @Test
     public void whenNotStartWithPrefixThenFalse() {
         assertThat(ArrayChar.startsWith(new char[]{'H', 'e', 'l', 'l', 'o'},
-                new char[]{'H', 'i'}),is(false));
+                new char[] {'H', 'i'}), is(false));
 
     }
 }
