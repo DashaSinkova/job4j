@@ -9,7 +9,6 @@ public class SortSelected {
             data[i] = min;
             data[index] = t;
         }
-
         return data;
     }
 
@@ -21,7 +20,6 @@ public class SortSelected {
             }
         }
         return min;
-
     }
 
     public static int indexOf(int[] data, int el, int start, int finish) {

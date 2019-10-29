@@ -4,7 +4,6 @@ public class MatrixCheck {
     public boolean isWin(char[][] board) {
         boolean res = false;
         boolean isRowWin, isColWin;
-
         for (int i = 0; i < board.length & !res; i++) {
             for (int j = 0; j < board.length & !res; j++) {
                 if (board[i][j] == 'X') {
@@ -15,11 +14,9 @@ public class MatrixCheck {
                         if (!res) {
                             break;
                         }
-
                     }
                 }
             }
-
         }
         return res;
     }

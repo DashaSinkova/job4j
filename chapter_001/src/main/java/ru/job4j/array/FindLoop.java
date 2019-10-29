@@ -10,7 +10,6 @@ public class FindLoop {
             }
         }
         return rst;
-
     }
 
     public static int indexOf(int[] data, int el, int start, int finish) {
