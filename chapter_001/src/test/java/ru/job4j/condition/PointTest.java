@@ -4,8 +4,7 @@ import org.junit.*;
 public class PointTest {
     @Test
     public void distance() {
-        Assert.assertEquals(2, Point.distance(0, 0, 2, 0), 0.01);
-        Assert.assertEquals(3, Point.distance(2, 1, 5, 0), 0.17);
+        Assert.assertEquals(2, new Point(0, 2).distance(new Point(0, 0)), 0.01);
     }
 
 }
