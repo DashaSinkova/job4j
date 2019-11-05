@@ -15,7 +15,7 @@ public class Cat {
     }
 
     public void show() {
-        System.out.println(this.name+"'s food are: "+this.food);
+        System.out.println(this.name + "'s food are: " + this.food);
     }
 
     public void eat(String meat) {
