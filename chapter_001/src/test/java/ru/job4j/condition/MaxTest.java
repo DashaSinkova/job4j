@@ -8,13 +8,12 @@ public class MaxTest {
     public void whenLeftMax() {
         assertThat(Max.max(2, 10), is(10));
     }
-
     @Test
     public void whenRightMax() {
-        assertThat(Max.max(10, 2), is(10));
+        assertThat(Max.max(10, 2, 21), is(21));
     }
     @Test
     public void whenBothAreEqual() {
-        assertThat(Max.max(2, 2), is(2));
+        assertThat(Max.max(2, 2, 40, 33), is(40));
     }
 }
