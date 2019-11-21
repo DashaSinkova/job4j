@@ -18,49 +18,61 @@ public class Store {
             Product pr = product[i];
             if (pr != null) {
                 System.out.println(pr.getName() + " " + pr.getCount());
-            } else System.out.println("null");
+            } else {
+                System.out.println("null");
+            }
         }
-        System.out.println("\nReplace milk to oil.");
+        System.out.println(System.lineSeparator() + "Replace milk to oil.");
         Product oil = new Product("Oil", 11);
         product[1] = oil;
         for (int i = 0; i < product.length; i++) {
             Product pr = product[i];
             if (pr != null) {
                 System.out.println(pr.getName() + " " + pr.getCount());
-            } else System.out.println("null");
+            } else {
+                System.out.println("null");
+            }
         }
-        System.out.println("\nShown only product.count > 10");
+        System.out.println(System.lineSeparator() + "Shown only product.count > 10");
         for (int i = 0; i < product.length; i++) {
             Product pr = product[i];
             if (pr != null && pr.getCount() > 10) {
                 System.out.println(pr.getName() + " " + pr.getCount());
-            } else System.out.println("null");
+            } else {
+                System.out.println("null");
+            }
         }
-        System.out.println("\nWhen cell = null");
+        System.out.println(System.lineSeparator() + "When cell = null");
         product[1] = null;
         for (int i = 0; i < product.length; i++) {
             Product pr = product[i];
             if (pr != null) {
                 System.out.println(pr.getName() + " " + pr.getCount());
-            } else System.out.println("null");
+            } else {
+                System.out.println("null");
+            }
         }
-        System.out.println("\nMove null cell:");
+        System.out.println(System.lineSeparator() + "Move null cell:");
         product[1] = product[2];
         product[2] = null;
         for (int i = 0; i < product.length; i++) {
             Product pr = product[i];
             if (pr != null) {
                 System.out.println(pr.getName() + " " + pr.getCount());
-            } else System.out.println("null");
+            } else {
+                System.out.println("null");
+            }
         }
-        System.out.println("\nMove all array:");
+        System.out.println(System.lineSeparator() + "Move all array:");
         Shop shop = new Shop();
-        Product[] mas = shop.delete(product, 2);
-        for (int i = 0; i < mas.length; i++) {
+        product = shop.delete(product, 2);
+        for (int i = 0; i < product.length; i++) {
             Product pr = product[i];
             if (pr != null) {
                 System.out.println(product[i].getName() + " " + product[i].getCount());
-            } else System.out.println("null");
+            } else {
+                System.out.println("null");
+            }
         }
     }
 }

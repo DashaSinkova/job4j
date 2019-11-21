@@ -8,19 +8,19 @@ public class Library {
         books[2] = new Book("ProGit", 1);
         books[3] = new Book("Murphy Grammar", 4);
         for (int i = 0; i < books.length; i++) {
-            System.out.printf("\nThe title of the book is \"%s\" Number of books is %d ", books[i].getName(), books[i].getCount());
+            System.out.printf(System.lineSeparator() + "The title of the book is \"%s\" Number of books is %d ", books[i].getName(), books[i].getCount());
         }
-        System.out.println("\nReplace titles");
+        System.out.println(System.lineSeparator() + "Replace titles");
         Book t = books[0];
         books[0] = books[3];
         books[3] = t;
         for (int i = 0; i < books.length; i++) {
-            System.out.printf("\nThe title of the book is \"%s\" Number of books is %d ", books[i].getName(), books[i].getCount());
+            System.out.printf(System.lineSeparator() + "The title of the book is \"%s\" Number of books is %d ", books[i].getName(), books[i].getCount());
         }
-        System.out.println("\nOutput CleanCode");
+        System.out.println(System.lineSeparator() + "Output CleanCode");
         for (int i = 0; i < books.length; i++) {
             if (books[i].getName() == "Clean code") {
-                System.out.printf("\nThe title of the book is \"%s\" Number of books is %d ", books[i].getName(), books[i].getCount());
+                System.out.printf(System.lineSeparator() + "The title of the book is \"%s\" Number of books is %d ", books[i].getName(), books[i].getCount());
             }
         }
     }
