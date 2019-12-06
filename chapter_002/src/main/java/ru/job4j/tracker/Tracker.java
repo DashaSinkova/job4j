@@ -22,9 +22,9 @@ public class Tracker {
      */
     public boolean replace(String id, Item item) {
         boolean res = false;
-        item.setId(this.findById(id).getId());
-        int i = this.getIndexById(item.getId());
+        int i = this.getIndexById(id);
         if (i >= 0) {
+            item.setId(items[i].getId());
             this.items[i] = item;
             res = true;
         }
@@ -72,8 +72,12 @@ public class Tracker {
      * @return
      */
     public Item findById(String id) {
+        Item item = null;
         int i = this.getIndexById(id);
-            return items[i];
+        if (i >= 0) {
+            item = items[i];
+        }
+            return item;
         }
     /**
      * метод генерирует случайное значение id в виде произвольного числа и времени
@@ -91,7 +95,7 @@ public class Tracker {
     private int getIndexById(String id) {
         int index = -1;
         for (int i = 0; i <= position; i++) {
-            if (items[i].getId() == id) {
+            if (items[i].getId().equals(id)) {
                 index = i;
                 break;
             }
