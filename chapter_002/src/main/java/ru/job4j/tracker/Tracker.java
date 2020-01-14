@@ -18,7 +18,11 @@ public class Tracker {
         return item;
     }
     /**
-     * редактирование заявок
+     * Редактирование заявок
+     *
+     * Ищем по данному id индекс ячейки с этим id
+     * Устанавливаем item(у) id ячейки с найденым индексом
+     * Добавляем item в ячейку массиву
      */
     public boolean replace(String id, Item item) {
         boolean res = false;
@@ -58,9 +62,9 @@ public class Tracker {
     public Item[] findByName(String key) {
         Item[] arr = new Item[position];
         int count = 0;
-       for (int i = 0; i < arr.length; i++) {
-           if (items[i].getName().equals(key)) {
-               arr[i] = items[i];
+           for (int i = 0; i < position; i++) {
+           if (items[i].getName().equalsIgnoreCase(key)) {
+               arr[count] = items[i];
                count++;
            }
        }
@@ -94,12 +98,17 @@ public class Tracker {
      */
     private int getIndexById(String id) {
         int index = -1;
-        for (int i = 0; i <= position; i++) {
-            if (items[i].getId().equals(id)) {
-                index = i;
-                break;
+        try {
+            for (int i = 0; i <= position; i++) {
+                if (items[i].getId().equals(id)) {
+                    index = i;
+                    break;
+                }
             }
+        } catch (NullPointerException e) {
+            System.out.println("Please, enter the correct information");
         }
+
         return index;
     }
 }
