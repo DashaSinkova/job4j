@@ -126,7 +126,7 @@ public class StartUI {
             }
         }
     }
-        private void showMenu () {
+        private void showMenu() {
             System.out.println("Menu.");
             System.out.println("0. Add new Item");
             System.out.println("1. Show all items");
@@ -136,7 +136,7 @@ public class StartUI {
             System.out.println("5. Find items by name");
             System.out.println("6. Exit Program");
         }
-        public static void main (String[]args){
+        public static void main(String[]args) {
             Scanner scanner = new Scanner(System.in);
             Tracker tracker = new Tracker();
             new StartUI().init(scanner, tracker);
