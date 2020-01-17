@@ -19,7 +19,7 @@ public class Bus implements Transport {
     }
     @Override
     public void drive() {
-        System.out.println("Автобус проехал " + (String.format("%.2f", qtFuel * 100 / qtFuelper100km) + " км.")); //вывести расстояние
+        System.out.println("Автобус проехал " + (String.format("%.2f", qtFuel * 100 / qtFuelper100km) + " км."));
         System.out.println("На сколько километров автобусу хватит топлива " + (String.format("%.2f", tankQt / (qtFuelper100km / 100))) + " км.");
     }
     public static boolean reg(String str) {
@@ -76,7 +76,7 @@ public class Bus implements Transport {
             fuelPrice = parseToDouble(s.nextLine());
         } while (fuelPrice == -1);
         do {
-            System.out.print("Введите кол-во пассажиров: "); //цикл работает пока условие истинно
+            System.out.print("Введите кол-во пассажиров: ");
             pas = (int) parseToDouble(s.nextLine());
             if (pas <= qtPlaces) {
                 flag = false;
