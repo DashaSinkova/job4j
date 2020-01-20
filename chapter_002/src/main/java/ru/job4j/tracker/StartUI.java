@@ -2,26 +2,24 @@
  * 2.1. Реализация класса StartUI[#188284]
  */
 package ru.job4j.tracker;
-import java.util.Scanner;
+
 
 public class StartUI {
-    public void init(Scanner scanner, Tracker tracker) {
+    public void init(Input input, Tracker tracker) {
         boolean run = true;
         while (run) {
             System.out.println();
             this.showMenu();
             System.out.println();
-            System.out.print("Select: ");
             try {
-                int select = Integer.valueOf(scanner.nextLine());
+                int select = input.askInt("Select: ");
                 if (select >= 0 && select < 7) {
                     if (select == 0) {
                         System.out.println("=== Create a new Item ====");
                         System.out.println(" If you want to exit enter \"exit\".");
                         boolean flag = false;
                         while (!flag) {
-                            System.out.print("Enter name:");
-                            String name = scanner.nextLine();
+                            String name = input.askStr("Enter name:");
                             if (!name.equalsIgnoreCase("exit")) {
                                 Item item = new Item(name);
                                 tracker.add(item);
@@ -44,13 +42,11 @@ public class StartUI {
                         System.out.println(" If you want to exit enter \"exit\".");
                         boolean flag = false;
                         while (!flag) {
-                            System.out.print("Enter id: ");
-                            String id = scanner.nextLine();
+                            String id = input.askStr("Enter id: ");
                             if (id.equalsIgnoreCase("exit")) {
                                 break;
                             }
-                            System.out.print("Enter name: ");
-                            String name = scanner.nextLine();
+                            String name = input.askStr("Enter name: ");
                             if (tracker.replace(id, new Item(name))) {
                                 System.out.println("Editing Successful");
                                 flag = true;
@@ -61,8 +57,7 @@ public class StartUI {
                         System.out.println(" If you want to exit enter \"exit\".");
                         boolean flag = false;
                         while (!flag) {
-                            System.out.print("Enter id: ");
-                            String id = scanner.nextLine();
+                            String id = input.askStr("Enter id: ");
                             if (!id.equalsIgnoreCase("exit")) {
                                 if (tracker.delete(id)) {
                                     System.out.println("Deleted completed successfully");
@@ -78,8 +73,7 @@ public class StartUI {
                         boolean flag = false;
                         while (!flag) {
                             try {
-                                System.out.print("Enter id: ");
-                                String id = scanner.nextLine();
+                                String id = input.askStr("Enter id: ");
                                 if (!id.equalsIgnoreCase("exit")) {
                                     Item item = tracker.findById(id);
                                     System.out.println(" Successful! " + System.lineSeparator() + item.getId() + " " + item.getName());
@@ -96,8 +90,7 @@ public class StartUI {
                         System.out.println(" If you want to exit enter \"exit\".");
                         boolean flag = false;
                         while (!flag) {
-                                System.out.print("Enter name: ");
-                                String name = scanner.nextLine();
+                                String name = input.askStr("Enter name: ");
                                 if (!name.equalsIgnoreCase("exit")) {
                                     Item[] arr = tracker.findByName(name);
                                     if (arr.length != 0) {
@@ -137,9 +130,9 @@ public class StartUI {
             System.out.println("6. Exit Program");
         }
         public static void main(String[]args) {
-            Scanner scanner = new Scanner(System.in);
+            Input input = new ConsoleInput();
             Tracker tracker = new Tracker();
-            new StartUI().init(scanner, tracker);
+            new StartUI().init(input, tracker);
         }
     }
 
