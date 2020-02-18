@@ -98,17 +98,12 @@ public class Tracker {
      */
     private int getIndexById(String id) {
         int index = -1;
-        try {
             for (int i = 0; i <= position; i++) {
                 if (items[i].getId().equals(id)) {
                     index = i;
                     break;
                 }
             }
-        } catch (NullPointerException e) {
-            System.out.println("Please, enter the correct information");
-        }
-
         return index;
     }
 }

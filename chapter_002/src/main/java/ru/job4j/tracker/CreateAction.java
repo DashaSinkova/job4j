@@ -5,17 +5,13 @@ public class CreateAction implements UserAction {
     public String name() {
         return "=== Create a new Item ====";
     }
-
     @Override
     public boolean execute(Input input, Tracker tracker) {
         name();
-        System.out.println(" If you want to exit enter \"exit\".");
         String name = input.askStr("Enter name:");
-        if (!name.equalsIgnoreCase("exit")) {
             Item item = new Item(name);
             tracker.add(item);
             System.out.print("Item is created!");
-        }
         return true;
     }
 }

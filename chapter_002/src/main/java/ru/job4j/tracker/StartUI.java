@@ -14,7 +14,11 @@ public class StartUI {
                 int select = input.askInt("Select: ");
                 UserAction action = actions[select];
                 run = action.execute(input, tracker);
-            } catch (Exception e) {
+            } catch (ArrayIndexOutOfBoundsException e) {
+                System.out.println("Please, enter the correct number between 0 and 6");
+            } catch (NullPointerException e) {
+                System.out.println("Unsuccessful. Please, enter the correct information");
+            } catch (NumberFormatException e) {
                 System.out.println("Please, enter the correct number between 0 and 6");
             }
         }
