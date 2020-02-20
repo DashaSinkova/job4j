@@ -10,9 +10,11 @@ public class ReplaceAction implements UserAction {
     public boolean execute(Input input, Tracker tracker) {
         String id = input.askStr("Enter id: ");
             String name = input.askStr("Enter name: ");
-            tracker.replace(id, new Item(name));
-            System.out.println("Editing Successful");
-
+        if(tracker.replace(id, new Item(name))) {
+            System.out.println("Edit completed successfully");
+        } else {
+            System.out.println("Item not found");
+        }
         return true;
     }
 }
