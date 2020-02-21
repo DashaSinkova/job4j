@@ -12,7 +12,7 @@ public class StubInput implements Input { //класс заменяет поль
     }
 
     @Override
-    public int askInt(String question)  {
+    public int askInt(String question) {
         return Integer.valueOf(askStr(question));
     }
 }

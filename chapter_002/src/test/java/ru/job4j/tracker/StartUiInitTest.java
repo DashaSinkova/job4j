@@ -27,6 +27,6 @@ public class StartUiInitTest {
                 .add("0. Stub action")
                 .toString();
         assertThat(new String(out.toByteArray()), is(expect));
-
+        System.setOut(def);
     }
 }
