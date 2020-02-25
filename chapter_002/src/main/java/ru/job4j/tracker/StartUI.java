@@ -9,27 +9,19 @@ public class StartUI {
         while (run) {
             this.showMenu(actions);
             System.out.println();
-            try {
-                int select = input.askInt("Select: ");
+                int select = input.askInt("Select: ", actions.length);
                 UserAction action = actions[select];
                 run = action.execute(input, tracker);
-            } catch (ArrayIndexOutOfBoundsException e) {
-                System.out.println("Please, enter the correct number between 0 and 6");
-            } catch (NullPointerException e) {
-                System.out.println("Unsuccessful. Please, enter the correct information");
-            } catch (NumberFormatException e) {
-                System.out.println("Please, enter the correct number between 0 and 6");
-            }
         }
     }
         private void showMenu(UserAction[] actions) {
         System.out.println("Menu.");
            for (int i = 0; i < actions.length; i++) {
-               System.out.print(i + ". " + actions[i].name());
+               System.out.println(i + ". " + actions[i].name());
            }
         }
         public static void main(String[]args) {
-            Input input = new ConsoleInput();
+            Input validate = new ValidateInput();
             Tracker tracker = new Tracker();
             UserAction[] actions = {
                     new CreateAction(),
@@ -38,7 +30,7 @@ public class StartUI {
                     new DeleteAction(),
                     new FindByIdAction(),
                     new FindItemsByNameAction()};
-            new StartUI().init(input, tracker, actions);
+            new StartUI().init(validate, tracker, actions);
         }
     }
 
