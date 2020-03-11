@@ -1,7 +1,7 @@
 package ru.job4j.tracker;
 
 public class StubAction implements UserAction { //класс для загрузки действия и проверки выполнения теста
-    private boolean call = false;//выбрали пункт меню или нет
+    private boolean call = false; //выбрали пункт меню или нет
     @Override
     public String name() {
         return "Stub action";
