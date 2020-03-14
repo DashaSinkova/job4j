@@ -8,8 +8,8 @@ import static org.hamcrest.core.Is.*;
 public class TrackerSingle4Test {
     @Test
     public void when1object() {
-        TrackerSingle4 tracker = TrackerSingle4.getInstance();
-        TrackerSingle4 trackerTest = TrackerSingle4.getInstance();
+        Tracker tracker = TrackerSingle4.getInstance();
+        Tracker trackerTest = TrackerSingle4.getInstance();
         tracker.add(new Item("Даша"));
         assertThat(tracker.findAll(), is(trackerTest.findAll()));
     }
