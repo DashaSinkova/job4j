@@ -3,33 +3,37 @@
  * 4.2. Статические методы.[#188295]
  */
 package ru.job4j.tracker;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class StartUI {
-    public void init(Input input, Tracker tracker, UserAction[] actions) {
+    public void init(Input input, Tracker tracker, List<UserAction> actions) {
         boolean run = true;
         while (run) {
             this.showMenu(actions);
-            System.out.println();
-                int select = input.askInt("Select: ", actions.length);
-                UserAction action = actions[select];
+            //System.out.println();
+                int select = input.askInt("Select: ", actions.size());
+                UserAction action = actions.get(select);
                 run = action.execute(input, tracker);
         }
     }
-        private void showMenu(UserAction[] actions) {
+        private void showMenu(List<UserAction> actions) {
         System.out.println("Menu.");
-           for (int i = 0; i < actions.length; i++) {
-               System.out.println(i + ". " + actions[i].name());
+           for (UserAction userAction : actions) {
+               System.out.println(actions.indexOf(userAction) + ". " + userAction.name());
            }
         }
         public static void main(String[]args) {
             Input validate = new ValidateInput(new ConsoleInput());
             Tracker tracker = new Tracker();
-            UserAction[] actions = {
-                    new CreateAction(),
-                    new ShowAllitemsAction(),
-                    new ReplaceAction(),
-                    new DeleteAction(),
-                    new FindByIdAction(),
-                    new FindItemsByNameAction()};
+            List<UserAction> actions = new ArrayList<>();
+                    actions.add(new CreateAction());
+                    actions.add(new ShowAllitemsAction());
+                    actions.add(new ReplaceAction());
+                    actions.add(new DeleteAction());
+                    actions.add(new FindByIdAction());
+                    actions.add(new FindItemsByNameAction());
             new StartUI().init(validate, tracker, actions);
         }
     }

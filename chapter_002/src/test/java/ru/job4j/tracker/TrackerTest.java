@@ -1,6 +1,10 @@
 package ru.job4j.tracker;
 import com.sun.tools.jdi.EventSetImpl;
 import org.junit.Test;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.Assert.assertThat;
 import static org.hamcrest.core.Is.is;
 /**
@@ -13,16 +17,20 @@ public class TrackerTest {
         Tracker sc = new Tracker();
         Item addItem1 = sc.add(new Item("Оборудование HP"));
         Item addItem2 = sc.add(new Item("Оборудование HPE"));
-        assertThat(sc.findAll(), is(new Item[]{addItem1, addItem2}));
+        List<Item> list = new ArrayList<>();
+        list.add(addItem2);
         assertThat(sc.delete(addItem1.getId()), is(true));
-        assertThat(sc.findAll(), is(new Item[]{addItem2}));
+        assertThat(sc.findAll(), is(list));
     }
     @Test
     public void findAllTest() {
         Tracker sc = new Tracker();
         Item addItem1 = sc.add(new Item("Оборудование HP"));
         Item addItem2 = sc.add(new Item("Оборудование HPE"));
-        assertThat(sc.findAll(), is(new Item[]{addItem1, addItem2}));
+        List<Item> exp = new ArrayList<>();
+        exp.add(addItem1);
+        exp.add(addItem2);
+        assertThat(sc.findAll(), is(exp));
     }
     @Test
     public void addTest() {
@@ -50,7 +58,9 @@ public class TrackerTest {
         Tracker sc = new Tracker();
         Item addItem0 = sc.add(new Item("Оборудование HPE"));
         Item addItem1 = sc.add(new Item("Оборудование HPE"));
-        Item addItem2 = sc.add(new Item("Оборудование HP"));
-        assertThat(sc.findByName(addItem0.getName()), is(new Item[]{addItem0, addItem1}));
+        List<Item> exp = new ArrayList<>();
+        exp.add(addItem0);
+        exp.add(addItem1);
+        assertThat(sc.findByName(addItem0.getName()), is(exp));
     }
 }
