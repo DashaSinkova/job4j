@@ -1,9 +1,4 @@
-<<<<<<< Updated upstream
-# temp
-=======
+[![Build Status](https://travis-ci.org/DashaSinkova/job4j.svg?branch=master)](https://travis-ci.org/DashaSinkova/job4j)
+[![codecov](https://codecov.io/gh/DashaSinkova/job4j/branch/master/graph/badge.svg)](https://codecov.io/gh/DashaSinkova/job4j)
 # job4j 
-"Объединение зафиксированных изменений"
-В курсе производилась работа с веткамы git.
-Изменения task_124176
->>>>>>> Stashed changes
-git
+
