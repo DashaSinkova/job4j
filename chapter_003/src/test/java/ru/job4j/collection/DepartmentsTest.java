@@ -21,4 +21,11 @@ public class DepartmentsTest {
         List<String> result = Departments.fillGaps(input);
         assertThat(result, is(expect));
     }
+    @Test
+    public void whenDescDep() {
+        List<String> deps = Arrays.asList("K1", "K1/SK1", "K1/SK1/SSK1", "K1/SK1/SSK2", "K1/SK2", "K2", "K2/SK1", "K2/SK1/SSK1", "K2/SK1/SSK2");
+        List<String> expectDeps = Arrays.asList("K2", "K2/SK1", "K2/SK1/SSK1", "K2/SK1/SSK2", "K1", "K1/SK1", "K1/SK1/SSK1", "K1/SK1/SSK2", "K1/SK2");
+        Departments.sortDesc(deps);
+        assertThat(deps, is(expectDeps));
+    }
 }
