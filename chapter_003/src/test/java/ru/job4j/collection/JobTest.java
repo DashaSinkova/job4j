@@ -93,5 +93,4 @@ public class JobTest {
         assertThat(it.next().toString(), is(new Job("Fix bug", 4).toString()));
         assertThat(it.next().toString(), is(new Job("X task", 0).toString()));
     }
-
 }
