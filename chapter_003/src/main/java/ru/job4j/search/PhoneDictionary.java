@@ -9,13 +9,13 @@ public class PhoneDictionary {
         persons.add(person);
     }
     public ArrayList<Person> find(String key) {
-        ArrayList<Person> res = new ArrayList<Person>();
+        var res = new ArrayList<Person>();
         Predicate<Person> checkAddress = person -> person.getAddress().contains(key);
         Predicate<Person> checkName = person -> person.getName().contains(key);
         Predicate<Person> checkSurname = person -> person.getSurname().contains(key);
         Predicate<Person> checkPhone = person -> person.getPhone().contains(key);
-        Predicate<Person> combine = checkAddress.or(checkName).or(checkSurname).or(checkPhone);
-        for (Person person : persons) {
+        var combine = checkAddress.or(checkName).or(checkSurname).or(checkPhone);
+        for (var person : persons) {
             if (combine.test(person)) {
                 res.add(person);
             }
