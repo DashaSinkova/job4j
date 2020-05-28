@@ -19,7 +19,7 @@ public class BankService {
     }
     public User findByPassport(String passport) {
         User res = null;
-            Optional<User> user = users.entrySet().stream().map(Map.Entry::getKey).filter(el -> el.getPassport().equals(passport)).findAny();
+            Optional<User> user = users.keySet().stream().filter(el -> el.getPassport().equals(passport)).findAny();
             if (user.isPresent()) {
                 res = user.get();
             }
@@ -29,8 +29,7 @@ public class BankService {
         Account res = null;
         User user = findByPassport(passport);
         if (user != null) {
-//            res = users.entrySet().stream().map(Map.Entry::getValue).flatMap(Collection::stream).filter(el -> el.getRequisite().equals(requisites)).findAny().get();
-            res = users.entrySet().stream().filter(el -> el.getKey().equals(user)).map(Map.Entry::getValue).flatMap(Collection::stream).filter(el -> el.getRequisite().equals(requisites)).findAny().get();
+            res = users.get(user).stream().filter(el -> el.getRequisite().equals(requisites)).findAny().get();
         }
         return res;
     }
