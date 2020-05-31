@@ -19,7 +19,7 @@ public class Student {
 
     @Override
     public String toString() {
-        return "Student{" + "score=" + score + ", surname='" + surname + '\'' + '}';
+        return "StudentUnits{" + "score=" + score + ", surname='" + surname + '\'' + '}';
     }
 
     @Override
