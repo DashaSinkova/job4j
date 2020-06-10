@@ -29,7 +29,7 @@ public class Tracker {
         boolean res = false;
         int i = this.getIndexById(id);
         if (i >= 0) {
-            item.setId(items.get(i).getId());
+            item.setId(id);
             items.set(i, item);
             res = true;
         }
